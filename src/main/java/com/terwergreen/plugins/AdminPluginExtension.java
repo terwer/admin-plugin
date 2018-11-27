@@ -22,7 +22,7 @@ public class AdminPluginExtension implements PluginInterface {
 
     private void setApplicationContext(ApplicationContext applicationContext) {
         this.applicationContext = applicationContext;
-        logger.info("AdminPlugin registerBean,applicationContext is:" + applicationContext);
+        logger.debug("AdminPlugin registerBean,applicationContext is:" + applicationContext);
     }
 
     @Override
