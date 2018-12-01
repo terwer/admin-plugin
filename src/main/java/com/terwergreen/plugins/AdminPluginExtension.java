@@ -30,7 +30,7 @@ public class AdminPluginExtension extends BugucmsPluginExtension {
 
     @Override
     public String identify() {
-        return "AdminPlugin identify in plugin";
+        return "AdminPlugin identify in " + applicationContext;
     }
 
     @Override
