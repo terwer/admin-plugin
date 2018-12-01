@@ -1,13 +1,12 @@
 package com.terwergreen.plugins;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.pf4j.Extension;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.context.ApplicationContext;
-import org.springframework.web.reactive.function.server.RouterFunction;
+import org.springframework.context.support.GenericApplicationContext;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author Terwer
@@ -16,14 +15,18 @@ import java.util.List;
  * @Description 扩展点
  **/
 @Extension
-public class AdminPluginExtension implements PluginInterface {
-    private static final Logger logger = LoggerFactory.getLogger(AdminPluginExtension.class);
-    private ApplicationContext applicationContext;
+public class AdminPluginExtension extends BugucmsPluginExtension {
+    private static final Log logger = LogFactory.getLog(AdminPluginExtension.class);
+    private GenericApplicationContext applicationContext;
 
-    private void setApplicationContext(ApplicationContext applicationContext) {
+    public AdminPluginExtension(GenericApplicationContext applicationContext) {
+        super(applicationContext);
         this.applicationContext = applicationContext;
-        logger.debug("AdminPlugin registerBean,applicationContext is:" + applicationContext);
+        logger.info("AdminPluginExtension contructor");
+        // 注册插件依赖
+        // super.registerBean(Object.class);
     }
+
 
     @Override
     public String identify() {
@@ -32,7 +35,13 @@ public class AdminPluginExtension implements PluginInterface {
 
     @Override
     public List<?> reactiveRoutes() {
-        return new ArrayList<RouterFunction<?>>() {{
-        }};
+//        return new ArrayList<RouterFunction<?>>() {{
+//        }};
+        return null;
+    }
+
+    @Override
+    public Map data() {
+        return null;
     }
 }

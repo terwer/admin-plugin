@@ -4,6 +4,7 @@ import org.pf4j.PluginException;
 import org.pf4j.PluginWrapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.support.GenericApplicationContext;
 
 /**
  * @Author Terwer
@@ -13,9 +14,14 @@ import org.slf4j.LoggerFactory;
  **/
 public class AdminPlugin extends BugucmsPlugin {
     private static final Logger logger = LoggerFactory.getLogger(AdminPlugin.class);
+    private GenericApplicationContext applicationContext;
 
     public AdminPlugin(PluginWrapper wrapper) {
         super(wrapper);
+        this.applicationContext =super.getBugucmsApplicationContext();
+        logger.info("AdminPlugin contructor");
+        // 注册插件依赖
+        // super.registerBean(Object.class);
     }
 
     @Override
