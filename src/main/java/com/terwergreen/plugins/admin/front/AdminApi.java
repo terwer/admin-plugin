@@ -22,11 +22,11 @@ public class AdminApi {
     @Autowired
     private CommonService commonService;
 
-    public RouterFunction<?> coreApi() {
+    public RouterFunction<?> adminApi() {
         return route(GET("/api/admin"), req -> ServerResponse.ok().body(Mono.just("admin api in plugin:systemInfo" + commonService.getSiteConfig("webname")), String.class));
     }
 
-    public RouterFunction<?> coreInfoApi() {
+    public RouterFunction<?> adminInfoApi() {
         return route(GET("/api/admin/info"), req -> ServerResponse.ok().body(Mono.just("admin api info in plugin"), String.class));
     }
 }

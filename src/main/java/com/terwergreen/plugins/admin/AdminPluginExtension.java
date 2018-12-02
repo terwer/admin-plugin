@@ -58,8 +58,8 @@ public class AdminPluginExtension implements PluginInterface {
     @Override
     public List<?> reactiveRoutes() {
         return new ArrayList<RouterFunction<?>>() {{
-            add(adminApi.coreApi());
-            add(adminApi.coreInfoApi());
+            add(adminApi.adminApi());
+            add(adminApi.adminInfoApi());
         }};
     }
 
