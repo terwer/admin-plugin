@@ -23,11 +23,11 @@ public class AdminApi {
     private CommonService commonService;
 
     public RouterFunction<?> coreApi() {
-        return route(GET("/api/hello"), req -> ServerResponse.ok().body(Mono.just("core api in plugin:systemInfo" + commonService.getSiteConfig("webname")), String.class));
+        return route(GET("/api/admin"), req -> ServerResponse.ok().body(Mono.just("admin api in plugin:systemInfo" + commonService.getSiteConfig("webname")), String.class));
     }
 
     public RouterFunction<?> coreInfoApi() {
-        return route(GET("/api/hello/info"), req -> ServerResponse.ok().body(Mono.just("core api info in plugin"), String.class));
+        return route(GET("/api/admin/info"), req -> ServerResponse.ok().body(Mono.just("admin api info in plugin"), String.class));
     }
 }
 
