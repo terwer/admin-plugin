@@ -11,10 +11,11 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 /**
- * @Author Terwer
- * @Date 2018/11/23 15:02
- * @Version 1.0
- * @Description webFlux Api
+ * webFlux Api
+ *
+ * @author Terwer
+ * @version 1.0
+ * 2018/11/23 15:02
  **/
 @Component
 public class AdminApi {
