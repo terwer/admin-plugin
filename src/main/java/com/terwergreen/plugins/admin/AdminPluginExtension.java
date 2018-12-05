@@ -1,6 +1,5 @@
 package com.terwergreen.plugins.admin;
 
-import com.terwergreen.core.CommonService;
 import com.terwergreen.plugins.PluginInterface;
 import com.terwergreen.plugins.admin.front.AdminApi;
 import com.terwergreen.plugins.admin.front.AdminController;
@@ -8,7 +7,6 @@ import com.terwergreen.plugins.admin.service.impl.AdminServiceImpl;
 import org.pf4j.Extension;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.GenericApplicationContext;
 import org.springframework.web.reactive.function.server.RouterFunction;
 
@@ -29,12 +27,6 @@ public class AdminPluginExtension implements PluginInterface {
     private static final Logger logger = LoggerFactory.getLogger(AdminPluginExtension.class);
     private GenericApplicationContext applicationContext;
 
-    @Autowired
-    private AdminApi adminApi;
-
-    @Autowired
-    private CommonService commonService;
-
     public AdminPluginExtension(GenericApplicationContext applicationContext) {
         this.applicationContext = applicationContext;
         logger.info("AdminPluginExtension contructor");
@@ -53,25 +45,18 @@ public class AdminPluginExtension implements PluginInterface {
 
     @Override
     public String identify() {
-        return "AdminPlugin identify in plugin,theme is:" + commonService.getSiteConfig("webtheme");
+        return "AdminPlugin identify in plugin";
     }
 
     @Override
     public List<?> reactiveRoutes() {
         return new ArrayList<RouterFunction<?>>() {{
-            add(adminApi.adminApi());
-            add(adminApi.adminInfoApi());
         }};
     }
 
     @Override
     public Map data() {
         Map dataMap = new HashMap();
-        dataMap.put("securityOn", 1);
-        dataMap.put("loginPath", "login");
-        // 查询后台地址
-        String adminPath = (String) commonService.getSiteConfig("adminPath");
-        dataMap.put("adminPath", adminPath);
         return dataMap;
     }
 }

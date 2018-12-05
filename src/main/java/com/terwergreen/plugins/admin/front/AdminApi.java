@@ -17,18 +17,6 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
  * @version 1.0
  * 2018/11/23 15:02
  **/
-@Component
 public class AdminApi {
-
-    @Autowired
-    private CommonService commonService;
-
-    public RouterFunction<?> adminApi() {
-        return route(GET("/api/admin"), req -> ServerResponse.ok().body(Mono.just("admin api in plugin:systemInfo" + commonService.getSiteConfig("webname")), String.class));
-    }
-
-    public RouterFunction<?> adminInfoApi() {
-        return route(GET("/api/admin/info"), req -> ServerResponse.ok().body(Mono.just("admin api info in plugin"), String.class));
-    }
 }
 
