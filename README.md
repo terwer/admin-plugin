@@ -8,7 +8,7 @@ admin plugin for bugucms
 > 使用maven打包
 
 ```
-mvn package -DskipTests
+mvn clean package -DskipTests
 ```
 
 > 将 ``target/`` 目录下的 ``admin-plugin-1.0.0.zip`` 文件拷贝到容器项目的 ``plugins`` 目录下
