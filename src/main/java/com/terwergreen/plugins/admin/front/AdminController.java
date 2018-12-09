@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * 2018/11/29 1:23
  **/
 @Controller
-@RequestMapping("a")
+@RequestMapping("${bugucms.web.admin-path}")
 public class AdminController {
     @Autowired
     private AdminService adminService;
