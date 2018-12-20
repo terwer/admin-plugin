@@ -869,6 +869,7 @@ window.Win10 = {
         this._animated_liveness = animated_liveness;
     },
     exit: function (url) {
+        console.log("exit url:" + url);
         layer.confirm(Win10.lang('确认要关闭本页吗?', 'Are you sure you want to close this page?'), {icon: 3, title: Win10.lang('提示', 'Prompt')}, function (index) {
             document.body.onbeforeunload = function () {
             };
