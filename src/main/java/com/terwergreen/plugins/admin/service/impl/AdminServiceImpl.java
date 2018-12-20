@@ -20,6 +20,7 @@ import java.util.Map;
  * @version 1.0
  * 2018/11/23 15:54
  **/
+@SuppressWarnings("all")
 @Service
 public class AdminServiceImpl implements AdminService {
     private static final Logger log = LoggerFactory.getLogger(AdminServiceImpl.class);

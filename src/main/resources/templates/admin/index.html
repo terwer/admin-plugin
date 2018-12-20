@@ -65,13 +65,25 @@
                 <img class="icon" th:src="@{/admin/static/images/icon/win10.png}"/>
                 <div class="title">BuguCMS官网</div>
             </div>
+            <div class="shortcut" onclick="Win10.openUrl(BUGUCMS_BASE_URL + 'blog/postManage/list','文章管理');">
+                <i class="icon fa fa-fw fa-bar-chart black-green" ></i>
+                <div class="title">文章管理</div>
+            </div>
+            <div class="shortcut" onclick="Win10.openUrl(BUGUCMS_BASE_URL + 'blog/postManage/new','写文章');">
+                <i class="icon fa fa-fw fa-pencil black-green" ></i>
+                <div class="title">写文章</div>
+            </div>
         </div>
         <div id="win10-desktop-scene"></div>
     </div>
     <div id="win10-menu" class="hidden">
         <div class="list win10-menu-hidden animated animated-slideOutLeft">
-            <div class="item"
-                 onclick="Win10.exit(BUGUCMS_BASE_URL +'logout');">
+            <div class="item" ><i class="blue icon fa fa-gavel fa-fw"></i>辅助工具</div>
+            <div class="sub-item" onclick="Win10.openUrl('win10ui.yuri2.cn/src/tools/builder-shortcut.html','图标代码生成器')">桌面图标代码生成器</div>
+            <div class="sub-item" onclick="Win10.openUrl('win10ui.yuri2.cn/src/tools/builder-tile.html','磁贴代码生成器')">磁贴代码生成器</div>
+            <div class="sub-item" onclick="Win10.openUrl('win10ui.yuri2.cn/src/tools/builder-menu.html','菜单代码生成器')">菜单代码生成器</div>
+            <div class="item" onclick="Win10.aboutUs()"><i class="purple icon fa fa-info-circle fa-fw"></i>关于</div>
+            <div class="item" onclick="Win10.exit(BUGUCMS_BASE_URL +'logout');">
                 <i class="black icon fa fa-power-off fa-fw"></i><span class="title">关闭</span>
             </div>
         </div>
