@@ -25,6 +25,7 @@
     <script type="text/javascript" th:inline="javascript">
         //设置项目根路径
         window.BUGUCMS_BASE_URL = /*[[@{/}]]*/'/';
+        window.AUTH_BASE_URL = /*[[@{/auth/}]]*/'/auth/';
     </script>
     <style>
         * {
@@ -70,8 +71,7 @@
     </div>
     <div id="win10-menu" class="hidden">
         <div class="list win10-menu-hidden animated animated-slideOutLeft">
-            <div class="item"
-                 onclick="Win10.exit(BUGUCMS_BASE_URL +'logout');">
+            <div class="item" onclick="Win10.exit(AUTH_BASE_URL + 'logout?returnUrl=' + window.location.href);">
                 <i class="black icon fa fa-power-off fa-fw"></i><span class="title">关闭</span>
             </div>
         </div>
